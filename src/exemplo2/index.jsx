@@ -2,23 +2,29 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   
-  const [??,??] = useState([]);
+  const [lista, setListar] = useState([]);
 
   useEffect(() => { 
-
     const buscarUsuario  = async () => {
-                    = await fetch('');
-        const dados =                ;
-        setUsuario(dados);
+        const valor = await fetch('https://fakestoreapi.com/products');
+        const dados = await valor.json()           ;
+        setListar(dados);
     }
     buscarUsuario();
-  }, //complete o código);
+  }, [])
 
   return (
     <>
       <h1>Usuário</h1>
       <ul>
-        {}
+        {lista.map(listar => (
+          <li key={listar.Id}>
+            <h2>{listar.title}</h2>
+            <p>{listar.description}</p>
+            <p>{listar.price}</p>
+           
+          </li>
+        ))}
       </ul>
     </>
   );
