@@ -7,7 +7,7 @@ export default function App() {
   useEffect(() => { 
     const buscarUsuario  = async () => {
         const valor = await fetch('https://fakestoreapi.com/products');
-        const dados = await valor.json()           ;
+        const dados = await valor.json()           
         setListar(dados);
     }
     buscarUsuario();
@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Usuário</h1>
+      <h1>Galeria de Fotos</h1>
       <ul>
         {lista.map(listar => (
           <li key={listar.Id}>
