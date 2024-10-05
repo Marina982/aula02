@@ -21,7 +21,7 @@ export default function App() {
         {
         <ul>
               {listar.map(listar => (
-                <li key={listar.gender}>
+                <li key={listar.id}>
                   <p>{listar.gender}</p>
                 </li>
               ))}
